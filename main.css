@@ -1,0 +1,51 @@
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+nav {
+    background-color: #663399;
+}
+
+textarea,
+#app div {
+    display: inline-block;
+    width: 49%;
+    height: calc(100% - 21px);
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+div {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+}
+
+textarea {
+    border: none;
+    border-right: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    background-color: #ababab;
+    font-size: 14px;
+    font-family: monospace;
+    padding: 20px;
+}
+
+pre {
+    background-color: black;
+    padding: 10px;
+    border-radius: 15px; 
+}
+
+p code {
+    display: inherit;
+    background-color: black;
+    padding: 10px;
+    border-radius: 15px;
+}
