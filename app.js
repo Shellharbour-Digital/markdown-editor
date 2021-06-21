@@ -46,6 +46,18 @@ let vm = Vue.createApp({
             document.execCommand('copy')
             document.body.removeChild(el)
         },
+
+        bold: function() {
+            let txtarea = document.getElementById('text')
+            let pos = txtarea.selectionStart
+            let end = txtarea.selectionEnd
+
+            this.input = this.input.slice(0, pos) + '****' + this.input.slice(pos);
+            txtarea.focus()
+            setTimeout(function() {
+                txtarea.selectionEnd = end + 2
+            }, 10)
+        },
     },
     mounted() {
         marked.setOptions({

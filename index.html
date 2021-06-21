@@ -13,8 +13,13 @@
     <nav>
       <button @click="download">Save</button>
       <button @click="copy">Copy</button>
+      <button @click="bold">Bold</button>
+      <button @click="italic">Italics</button>
+      <button @click="code">Code</button>
+      <button @click="blockquote">Blockquote</button>
+      <button @click="strikethrough">Strikethrough</button>
     </nav>
-    <textarea :value="input" @input="update"></textarea>
+    <textarea id="text" autofocus :value="input" @input="update"></textarea>
     <div v-html="compiledMarkdown"></div>
   </div>
 
