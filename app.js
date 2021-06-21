@@ -47,19 +47,26 @@ let vm = Vue.createApp({
             document.body.removeChild(el)
         },
 
-        bold: function() {
+        addStyle: function(style) {
             let txtarea = document.getElementById('text')
             let pos = txtarea.selectionStart
             let end = txtarea.selectionEnd
+            // round up for single characters such as blockquote '>' so the focus doesn't position backwards
+            let mid = Math.ceil(style.length / 2)
 
-            this.input = this.input.slice(0, pos) + '****' + this.input.slice(pos);
+            // insert the markdown style where the cursor is set and focus so we can resume typing
+            this.input = this.input.slice(0, pos) + style + this.input.slice(pos);
             txtarea.focus()
+            
+            // without setTimeout the selectionEnd triggers on the callstack before the render
             setTimeout(function() {
-                txtarea.selectionEnd = end + 2
-            }, 10)
+                txtarea.selectionEnd = end + mid
+            }, 0)
         },
     },
     mounted() {
+        // highlights our code block markdown on render
+        // these options are documented in the markedjs docs
         marked.setOptions({
             renderer: new marked.Renderer(),
             highlight: function(code) {

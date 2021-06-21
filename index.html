@@ -13,11 +13,11 @@
     <nav>
       <button @click="download">Save</button>
       <button @click="copy">Copy</button>
-      <button @click="bold">Bold</button>
-      <button @click="italic">Italics</button>
-      <button @click="code">Code</button>
-      <button @click="blockquote">Blockquote</button>
-      <button @click="strikethrough">Strikethrough</button>
+      <button @click="addStyle('****')">Bold</button>
+      <button @click="addStyle('**')">Italics</button>
+      <button @click="addStyle('``````')">Code</button>
+      <button @click="addStyle('>')">Blockquote</button>
+      <button @click="addStyle('~~~~')">Strikethrough</button>
     </nav>
     <textarea id="text" autofocus :value="input" @input="update"></textarea>
     <div v-html="compiledMarkdown"></div>
