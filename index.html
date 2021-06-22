@@ -11,16 +11,18 @@
 <body>
   <div id="app" v-cloak>
     <nav>
-      <button @click="download">Save</button>
-      <button @click="copy">Copy</button>
+      <button id="save" @click="download">Save</button>
+      <button id="copy" @click="copy">Copy</button>
       <button @click="addStyle('****')">Bold</button>
       <button @click="addStyle('**')">Italics</button>
       <button @click="addStyle('``````')">Code</button>
       <button @click="addStyle('>')">Blockquote</button>
       <button @click="addStyle('~~~~')">Strikethrough</button>
+      <button id="clear" @click="clear">Clear</button>
     </nav>
     <textarea id="text" autofocus :value="input" @input="update"></textarea>
     <div v-html="compiledMarkdown"></div>
+    <h1 class="msg fade-out" v-if="showMsg">{{ msg }}</h1>
   </div>
 
   <script src="https://unpkg.com/vue@next"></script>

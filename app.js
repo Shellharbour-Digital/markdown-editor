@@ -2,6 +2,8 @@ let vm = Vue.createApp({
     data() {
         return {
             input: '',
+            msg: '',
+            showMsg: false,
         }
     },
     computed: {
@@ -33,6 +35,14 @@ let vm = Vue.createApp({
             }
         },
 
+        showMessage: function(message) {
+            this.msg = message
+            this.showMsg = true
+            setTimeout(() => {
+                this.showMsg = false
+            }, 2000)
+        },
+
         copy: function() {
             const el = document.createElement('textarea')
 
@@ -45,6 +55,17 @@ let vm = Vue.createApp({
             el.select()
             document.execCommand('copy')
             document.body.removeChild(el)
+
+            this.showMessage('Copied to Clipboard!')
+        },
+
+        clear: function() {
+            if (confirm("Clear the document?")) {
+                this.input = ''
+                document.getElementById('text').focus()
+
+                this.showMessage('Cleared the document!')
+            }
         },
 
         addStyle: function(style) {

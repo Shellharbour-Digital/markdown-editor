@@ -11,11 +11,45 @@ nav {
     background-color: #663399;
 }
 
+button {
+    background-color: #2E34A6;
+    color: #FFF;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    background-color: #BB91E5;
+    cursor: pointer;
+}
+
+#save,
+#copy {
+    background-color: #993A91;
+}
+
+#save:hover,
+#copy:hover {
+    background-color: #8589E6;
+}
+
+#clear {
+    background-color: #A63937;
+    float: right;
+}
+
+#clear:hover {
+    background-color: #D96532;
+}
+
 textarea,
 #app div {
     display: inline-block;
     width: 50%;
-    height: calc(100% - 21px);
+    height: calc(100% - 43px);
     vertical-align: top;
     box-sizing: border-box;
     padding: 0 20px;
@@ -56,3 +90,63 @@ blockquote {
     border-left-style: solid;
     border-left: 5px solid #4f545c;
 }
+
+.msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fade-out {
+    animation: fadeOut ease 2s;
+    -webkit-animation: fadeOut ease 2s;
+    -moz-animation: fadeOut ease 2s;
+    -o-animation: fadeOut ease 2s;
+    -ms-animation: fadeOut ease 2s;
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-moz-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-webkit-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-o-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+  @-ms-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
